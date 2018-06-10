@@ -11,6 +11,7 @@ function LCController($scope, $filter) {
 //$scope.displayMessage ="test";
   $scope.chkLunch = function () {
 
+	//this could have been done in a function which returned number of items or 0 for no item/error case
 	if ($scope.lunchlist === undefined || $scope.lunchlist == "")
 	{
 		$scope.displayMessage ="Please enter data first";
@@ -25,9 +26,13 @@ function LCController($scope, $filter) {
 	//console.log( a.length);
 	
 	if (lunchItemsList.length<=3)
+	{
 		$scope.displayMessage ="Enjoy!";
+	}
 	else
+	{
 		$scope.displayMessage ="Too much!";
+	}
 	
   };
   
